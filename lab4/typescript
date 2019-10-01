@@ -1,0 +1,489 @@
+Script started on Tue 06 Nov 2018 01:59:55 PM PST
+staubwb@CF165-02:~/Documents/CS241/lab4$ jdb[K[K[Kjavac -g MergeSort.java
+staubwb@CF165-02:~/Documents/CS241/lab4$ jdb Mergesort[K[K[K[KSort
+Initializing jdb ...
+> stop at MergeSort:9
+Deferring breakpoint MergeSort:9.
+It will be set after the class is loaded.
+> run
+run MergeSort
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint MergeSort:9
+Given array:
+12 11 13 5 6 7 
+
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=10 bci=7
+10            int n2 = r - m;
+
+main[1] step    print n1
+ n1 = 1
+main[1] print n2
+com.sun.tools.example.debug.expr.ParseException: Name unknown: n2
+ n2 = null
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=13 bci=12
+13            int L[] = new int[n1];
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=14 bci=18
+14            int R[] = new int[n2];
+
+main[1] stop at Me	rgeSort:56
+Unable to set breakpoint MergeSort:56 : No code at line 56 in MergeSort
+main[1] stop at M	 MergeSr ort:61
+Unable to set breakpoint MergeSort:61 : No code at line 61 in MergeSort
+main[1] stop ata M    MergeSort:62
+Set breakpoint MergeSort:62
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 2
+r = 2
+Local variables:
+main[1] list
+58    
+59        // Main function that sorts arr[l..r] using
+60        // merge()
+61        private static void sort(int arr[], int l, int r) {
+62 =>         if (l < r) {
+63                // Find the middle point
+64                int m = (l+r)/2;
+65    
+66                // Sort first and second halves
+67    
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 4
+r = 4
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] cont
+> 
+Sorted array:
+5 6 7 11 12 13 
+
+The application exited
+cstaubwb@CF165-02:~/Documents/CS241/lab4$ c[Kexit
+
+Script done on Tue 06 Nov 2018 02:04:42 PM PST
+Script started on Wed 07 Nov 2018 04:40:23 PM PST
+staubwb@cf164-21:~/Documents/CS241/lab4$ javac -g MergeSort.java
+staubwb@cf164-21:~/Documents/CS241/lab4$ jdb MergeSort
+Initializing jdb ...
+> run   step    stop in MergeSort.merge
+Deferring breakpoint MergeSort.merge.
+It will be set after the class is loaded.
+> run
+run MergeSort
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint MergeSort.merge
+Given array:
+12 11 13 5 6 7 
+
+Breakpoint hit: "thread=main", MergeSort.merge(), line=9 bci=0
+9            int n1 = m - l + 1;
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=10 bci=7
+10            int n2 = r - m;
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=13 bci=12
+13            int L[] = new int[n1];
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=14 bci=18
+14            int R[] = new int[n2];
+
+main[1] clear
+Breakpoints set:
+	breakpoint MergeSort.merge
+main[1] clear MergeSort.merge
+Removed: breakpoint MergeSort.merge
+main[1] stop at MergeSort:41
+Set breakpoint MergeSort:41
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=17 bci=24
+17            for (int i=0; i<n1; i++) {
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=18 bci=34
+18                L[i] = arr[l+i];
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=17 bci=45
+17            for (int i=0; i<n1; i++) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+m = 0
+r = 1
+Local variables:
+n1 = 1
+n2 = 1
+L = instance of int[1] (id=423)
+R = instance of int[1] (id=424)
+i = 0
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=20 bci=51
+20            for (int j=0; j<n2; j++) {
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.merge(), line=21 bci=61
+21                R[j] = arr[m+1+j];
+
+main[1] run   cont    h ehrtr     where
+  [1] MergeSort.merge (MergeSort.java:21)
+  [2] MergeSort.sort (MergeSort.java:73)
+  [3] MergeSort.sort (MergeSort.java:68)
+  [4] MergeSort.sort (MergeSort.java:68)
+  [5] MergeSort.main (MergeSort.java:98)
+main[1] list
+17            for (int i=0; i<n1; i++) {
+18                L[i] = arr[l+i];
+19            }
+20            for (int j=0; j<n2; j++) {
+21 =>             R[j] = arr[m+1+j];
+22            }
+23    
+24    
+25            /* Merge the temp arrays */
+26    
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.merge(), line=41 bci=143
+41                k++;
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+m = 0
+r = 1
+Local variables:
+n1 = 1
+n2 = 1
+L = instance of int[1] (id=423)
+R = instance of int[1] (id=424)
+i = 0
+j = 1
+k = 0
+main[1] stop at  in MergeSort.sort
+Set breakpoint MergeSort.sort
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 2
+r = 2
+Local variables:
+main[1] clear
+Breakpoints set:
+	breakpoint MergeSort:41
+	breakpoint MergeSort.sort
+main[1] clear MergeSort:41
+Removed: breakpoint MergeSort:41
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] lo  list
+58    
+59        // Main function that sorts arr[l..r] using
+60        // merge()
+61        private static void sort(int arr[], int l, int r) {
+62 =>         if (l < r) {
+63                // Find the middle point
+64                int m = (l+r)/2;
+65    
+66                // Sort first and second halves
+67    
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 3
+r = 5
+Local variables:
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.sort(), line=64 bci=5
+64                int m = (l+r)/2;
+
+main[1] step
+> 
+Step completed: "thread=main", MergeSort.sort(), line=68 bci=11
+68                sort(arr, l, m);
+
+main[1] !!
+step
+> 
+Step completed: 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] !!
+step
+> 
+Step completed: "thread=main", MergeSort.sort(), line=64 bci=5
+64                int m = (l+r)/2;
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 3
+r = 3
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 4
+r = 4
+Local variables:
+main[1] watch [access|all] MergeSort.arr   merge
+Class containing field must be specified.
+main[1] watch [access|all] MergeSort.arr[]
+Class containing field must be specified.
+main[1] pritn   int arr[]
+com.sun.tools.example.debug.expr.ParseException: Encountered "]" at line 1, column 6.
+Was expecting one of:
+    "false" ...
+    "new" ...
+    "null" ...
+    "super" ...
+    "this" ...
+    "true" ...
+    <INTEGER_LITERAL> ...
+    <FLOATING_POINT_LITERAL> ...
+    <CHARACTER_LITERAL> ...
+    <STRING_LITERAL> ...
+    <IDENTIFIER> ...
+    "(" ...
+    "!" ...
+    "~" ...
+    "++" ...
+    "--" ...
+    "+" ...
+    "-" ...
+    
+ arr[] = null
+main[1] print l L[]
+com.sun.tools.example.debug.expr.ParseException: Name unknown: L
+ L[] = null
+main[1] watch [accr ess|all] MergeSort.l
+Class containing field must be specified.
+main[1] list
+58    
+59        // Main function that sorts arr[l..r] using
+60        // merge()
+61        private static void sort(int arr[], int l, int r) {
+62 =>         if (l < r) {
+63                // Find the middle point
+64                int m = (l+r)/2;
+65    
+66                // Sort first and second halves
+67    
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 5
+r = 5
+Local variables:
+main[1] cont
+> 
+Sorted array:
+5 6 7 11 12 13 
+
+The application exited
+staubwb@cf164-21:~/Documents/CS241/lab4$ jdb MergeSort
+Initializing jdb ...
+> stop in MergeSort. .sort
+Deferring breakpoint MergeSort.sort.
+It will be set after the class is loaded.
+> run
+run MergeSort
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint MergeSort.sort
+Given array:
+12 11 13 5 6 7 
+
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+r = 5
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] list
+58    
+59        // Main function that sorts arr[l..r] using
+60        // merge()
+61        private static void sort(int arr[], int l, int r) {
+62 =>         if (l < r) {
+63                // Find the middle point
+64                int m = (l+r)/2;
+65    
+66                // Sort first and second halves
+67    
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+r = 2
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+r = 1
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 0
+r = 0
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] locals
+Method arguments:
+arr = instance of int[6] (id=422)
+l = 1
+r = 1
+Local variables:
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] cont
+> 
+Breakpoint hit: "thread=main", MergeSort.sort(), line=62 bci=0
+62            if (l < r) {
+
+main[1] clear
+Breakpoints set:
+	breakpoint MergeSort.sort
+main[1] clear merge     MergeSort.sort
+Removed: breakpoint MergeSort.sort
+main[1] cont
+> 
+Sorted array:
+5 6 7 11 12 13 
+
+The application exited
+staubwb@cf164-21:~/Documents/CS241/lab4$ exit
+
+Script done on Wed 07 Nov 2018 05:04:45 PM PST
